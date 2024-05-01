@@ -1,0 +1,26 @@
+{
+  "name": "nitrometry",
+  "version": "0.1.0",
+  "description": "",
+  "keywords": [],
+  "bugs": "https://github.com/yaroslav-korotaev/nitrometry/issues",
+  "license": "MIT",
+  "author": "Yaroslav Korotaev <yaroslav.korotaev@gmail.com>",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "repository": "yaroslav-korotaev/nitrometry",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "turbotrace": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.5"
+  }
+}
