@@ -1,6 +1,5 @@
 import {
   type Backend as TracingBackend,
-  type Tracing,
   createTracing,
 } from 'turbotrace';
 import {
@@ -13,20 +12,20 @@ export type InstrumentationParams = {
 };
 
 export class Instrumentation {
-  public tracing: Tracing;
+  public root: Telemetry;
   
   constructor(params: InstrumentationParams) {
     const {
       tracingBackend,
     } = params;
     
-    this.tracing = createTracing(tracingBackend);
+    this.root = createTelemetry({
+      tracing: createTracing(tracingBackend),
+    });
   }
   
   public telemetry(name: string): Telemetry {
-    return createTelemetry({
-      tracing: this.tracing.child(name),
-    });
+    return this.root.child(name);
   }
 }
 
